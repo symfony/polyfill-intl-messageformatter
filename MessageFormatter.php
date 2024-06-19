@@ -296,9 +296,9 @@ class MessageFormatter
                         $offset = (int) trim(substr($selector, 7, $pos - 7));
                         $selector = trim(substr($selector, 1 + $pos, \strlen($selector)));
                     }
-                    if (false === $message && 'other' === $selector ||
-                        '=' === $selector[0] && (int) substr($selector, 1, \strlen($selector)) === $arg ||
-                        'one' === $selector && 1 == $arg - $offset
+                    if (false === $message && 'other' === $selector
+                        || '=' === $selector[0] && (int) substr($selector, 1, \strlen($selector)) === $arg
+                        || 'one' === $selector && 1 == $arg - $offset
                     ) {
                         $message = implode(',', str_replace('#', $arg - $offset, $plural[$i]));
                     }
